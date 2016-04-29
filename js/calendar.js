@@ -328,7 +328,7 @@
             if (count.num !== 0) {
               var index = count.keys[0];
               var cLink = $('<a>').attr('href', current.posts[index].link).attr('title', current.posts[index].title).html(day++);
-              cDay.addClass('cal-post').append(cLink);
+              cDay.append(cLink);
             } else {
               cDay.html(day++);
             }

@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>小米2连接Ubuntu12.04进行调试 | 净土</title>
+  <title>Hexo的日历插件 | 净土</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A blog of howiefh.">
+  <meta name="description" content="Hexo 日历; Hexo Calendar; Hexo plugin; Calendar Plugin;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小米2连接Ubuntu12.04进行调试">
-<meta property="og:url" content="http://howiefh.github.io/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/index.html">
+<meta property="og:title" content="Hexo的日历插件">
+<meta property="og:url" content="http://howiefh.github.io/2016/04/29/hexo-s-calendar-plugin/index.html">
 <meta property="og:site_name" content="净土">
-<meta property="og:description" content="A blog of howiefh.">
-<meta property="og:updated_time" content="2016-04-24T09:28:37.286Z">
+<meta property="og:description" content="Hexo 日历; Hexo Calendar; Hexo plugin; Calendar Plugin;">
+<meta property="og:updated_time" content="2016-04-29T13:58:39.153Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小米2连接Ubuntu12.04进行调试">
-<meta name="twitter:description" content="A blog of howiefh.">
+<meta name="twitter:title" content="Hexo的日历插件">
+<meta name="twitter:description" content="Hexo 日历; Hexo Calendar; Hexo plugin; Calendar Plugin;">
   
     <link rel="alternate" href="/atom.xml" title="净土" type="application/atom+xml">
   
@@ -94,17 +94,17 @@ var _hmt = _hmt || [];
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-xiaomi2-connect-ubuntu12.04-debugging" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo-s-calendar-plugin" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
-<a href="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/" class="article-date">
-  <time datetime="2013-04-29T07:32:38.000Z" itemprop="datePublished">2013-04-29</time>
+<a href="/2016/04/29/hexo-s-calendar-plugin/" class="article-date">
+  <time datetime="2016-04-29T13:10:44.000Z" itemprop="datePublished">2016-04-29</time>
 </a>
 
 
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
   </div>
 
   </div>
@@ -115,7 +115,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      小米2连接Ubuntu12.04进行调试
+      Hexo的日历插件
     </h1>
   
 
@@ -127,25 +127,33 @@ var _hmt = _hmt || [];
 		<div id="toc" class="toc-article">
 			<h2 class="toc-title"><span>Contents</span></h2>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#运行lsusb"><span class="toc-number">1.</span> <span class="toc-text">运行lsusb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑-etc-udev-rules-d-50-android-rules中的规则"><span class="toc-number">2.</span> <span class="toc-text">编辑/etc/udev/rules.d/50-android.rules中的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变更权限"><span class="toc-number">3.</span> <span class="toc-text">变更权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启udev服务"><span class="toc-number">4.</span> <span class="toc-text">重启udev服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#杀死adb正在运行的服务，查看连接的设备"><span class="toc-number">5.</span> <span class="toc-text">杀死adb正在运行的服务，查看连接的设备</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">2.</span> <span class="toc-text">配置</span></a></li></ol>
 		
 		</div>
 		
-        <h2 id="运行lsusb"><a href="#运行lsusb" class="headerlink" title="运行lsusb"></a>运行lsusb</h2><p>打开终端，在未连接小米的情况下运行lsusb，之后连接小米再运行lsusb，比较两次的输出应该会发现多出这样一行：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Bus </span><span class="number">001</span> Device <span class="number">007</span>: ID <span class="number">2717</span>:xxxx</span><br></pre></td></tr></table></figure></p>
-<p>其中<code>xxxx</code>应该是因人而异的，这个ID就是咱们的小米了。请记下这个ID，之后会用到。</p>
+        <p>如果你在使用 <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a> 并且你在寻找一款 <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a> 下可用的日历插件，你还希望这款日历插件能像博客园或者WordPress的日历小工具一样，如果某天有文章，日期就会显示为文章链接，那么本文介绍的这个插件就是你所需要的。</p>
+<p>实际上之前在 <a href="http://howiefh.github.io/2014/04/20/hexo-optimize-and-my-theme-landscape-f/">Landscape-F</a> 主题中已经实现过一个日历插件（<a href="https://github.com/howiefh/hexo-calendar" target="_blank" rel="external">hexo-calendar</a>）了，只不过当时这个插件很挫，打开一篇文章时，日历中才能显示文章链接，而且只能显示文章发表当月的文章的链接，你要查看其他月的日历时，就算有文章也不会在日历中显示，因为当时的做法是在生成页面直接在页面的日历中嵌入文章当月所有文章的链接，是完全静态的。现在我重新实现了日历插件（<a href="https://github.com/howiefh/hexo-generator-calendar" target="_blank" rel="external">hexo-generator-calendar</a>），很简单，就是在Hexo generator的时候，把所有文章的标题、链接、发布时间信息以json格式存入文件中，然后在前端用ajax方法请求日历数据，解析并生成日历表格。下面简单介绍下这个插件的安装和使用。</p>
 <a id="more"></a>
-<h2 id="编辑-etc-udev-rules-d-50-android-rules中的规则"><a href="#编辑-etc-udev-rules-d-50-android-rules中的规则" class="headerlink" title="编辑/etc/udev/rules.d/50-android.rules中的规则"></a>编辑/etc/udev/rules.d/50-android.rules中的规则</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi  <span class="regexp">/etc/u</span>dev<span class="regexp">/rules.d/</span><span class="number">50</span>-android.rules</span><br></pre></td></tr></table></figure>
-<p>在打开的文件中增加以下文本：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">SUBSYSTEM</span>==<span class="string">"usb"</span>, SYSFS&#123;idVendor&#125;==<span class="string">"2717"</span>, MODE==<span class="string">"0666"</span></span><br><span class="line"><span class="attr">SUBSYSTEM</span>==<span class="string">"usb_device"</span>, SYSFS&#123;idVendor&#125;==<span class="string">"2717"</span>, MODE==<span class="string">"0666"</span></span><br><span class="line"><span class="attr">SUBSYSTEM</span>==<span class="string">"usb"</span>, ATTR&#123;idVendor&#125;==<span class="string">"2717"</span>, ATTR&#123;idProduct&#125;==<span class="string">"xxxx"</span>, SYMLINK+=<span class="string">"android_adb"</span></span><br></pre></td></tr></table></figure></p>
-<p>替换<code>ATTR{idProduct}==&quot;xxxx&quot;</code>中的<code>xxxx</code>为你之前显示的结果。50-android.rules 文件名应该是随意的，如99-android.rules ，54-android.rules应该也可以。</p>
-<p><strong>注意</strong>：<code>SUBSYSTEM==&quot;usb&quot;, SYSFS{idVendor}==&quot;2717&quot;, MODE==&quot;0666&quot;</code>这句是给 ubuntu 7.01 以后的系统识别用的。而<code>SUBSYSTEM==&quot;usb_device&quot;, SYSFS{idVendor}==&quot;2717&quot;, MODE==&quot;0666&quot;</code>是给 Ubuntu 7.01之前的系统识别用的。</p>
-<h2 id="变更权限"><a href="#变更权限" class="headerlink" title="变更权限"></a>变更权限</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+rx <span class="regexp">/etc/u</span>dev<span class="regexp">/rules.d/</span><span class="number">50</span>-android.rules</span><br></pre></td></tr></table></figure>
-<h2 id="重启udev服务"><a href="#重启udev服务" class="headerlink" title="重启udev服务"></a>重启udev服务</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service udev <span class="built_in">restart</span></span><br></pre></td></tr></table></figure>
-<h2 id="杀死adb正在运行的服务，查看连接的设备"><a href="#杀死adb正在运行的服务，查看连接的设备" class="headerlink" title="杀死adb正在运行的服务，查看连接的设备"></a>杀死adb正在运行的服务，查看连接的设备</h2><p>cd到你的sdk目录下的platform-tools中，执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ./adb <span class="keyword">kill</span>-<span class="keyword">server</span></span><br><span class="line">sudo ./adb devices</span><br></pre></td></tr></table></figure></p>
-<p>如果List of devices attached下没有设备。请执行如下操作：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~/.android/</span><br><span class="line"><span class="keyword">vi</span> adb_usb.ini</span><br></pre></td></tr></table></figure></p>
-<p>添加如下内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x2717</span><br></pre></td></tr></table></figure></p>
-<p>这个 0x2717 就是我们得到的设备号码。保存，退出，之后再切换到platform-tools，执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ./adb <span class="keyword">kill</span>-<span class="keyword">server</span></span><br><span class="line">sudo ./adb devices</span><br></pre></td></tr></table></figure></p>
-<p>这时List of devices attached下应该有设备了。之后就可以在eclipse里调试了。</p>
-<p>本文参考：<a href="http://www.cnblogs.com/loulijun/archive/2012/12/18/2823272.html" target="_blank" rel="external">http://www.cnblogs.com/loulijun/archive/2012/12/18/2823272.html</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>执行下面的命令</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> &lt;你的博客路径&gt;</span><br><span class="line">npm install --<span class="keyword">save</span> git:<span class="comment">//github.com/howiefh/hexo-generator-calendar.git</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>可以在博客根目录的<code>_config.yml</code>中配置这个插件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">calendar:</span></span><br><span class="line"><span class="attr">    single:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    root:</span> calendar/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>single - 生成一个单独的json文件。 (默认: true)</li>
+<li>root - 当single的值是false时，这个值才会生效，用来指定按月份生成的多个json文件的根目录。 (默认: calendar/)</li>
+</ul>
+<p>如果你在其他 <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a> 主题中想使用这个插件，你需要在相应目录中添加以下几个文件：</p>
+<ul>
+<li><a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/layout/_widget/calendar.ejs" target="_blank" rel="external">calendar.ejs</a></li>
+<li><a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/languages.js" target="_blank" rel="external">languages.js</a></li>
+<li><a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/calendar.js" target="_blank" rel="external">calendar.js</a></li>
+<li><a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/css/_partial/calendar.styl" target="_blank" rel="external">calendar.styl</a></li>
+</ul>
+<p>此外，你还需要在 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/css/_variables.styl" target="_blank" rel="external">_variables.styl</a> 中添加以下内容</p>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">color</span>-calendar-border = <span class="meta">#d1d1d1</span></span><br><span class="line"><span class="keyword">color</span>-calendar-post-bg = <span class="meta">#<span class="number">007</span>acc</span></span><br><span class="line"><span class="keyword">color</span>-calendar-hover-bg = <span class="meta">#<span class="number">686868</span></span></span><br></pre></td></tr></table></figure>
+<p>在 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/layout/_partial/after-footer.ejs" target="_blank" rel="external">after-footer.ejs</a> 中添加以下内容</p>
+<figure class="highlight erb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">%</span></span></span><span class="ruby"> <span class="keyword">if</span> (theme.widgets.indexOf(<span class="string">'calendar'</span>) != -<span class="number">1</span>)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span></span></span><span class="ruby"> js(<span class="string">'js/languages'</span>) </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span></span></span><span class="ruby"> js(<span class="string">'js/calendar'</span>) </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    $(<span class="string">'#calendar'</span>).aCalendar(<span class="string">'&lt;%=</span></span></span><span class="ruby"> config.language </span><span class="xml"><span class="undefined">%&gt;', &#123;single:&lt;%=</span></span><span class="ruby"> config.calendar.single </span><span class="xml"><span class="undefined">%&gt;, root:'&lt;%=</span></span><span class="ruby"> config.calendar.root </span><span class="xml"><span class="undefined">%&gt;'&#125;);</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span></span></span><span class="ruby"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>最后，希望大家喜欢这款插件O(∩_∩)O。</p>
 
       
     </div>
@@ -156,11 +164,11 @@ var _hmt = _hmt || [];
 	  <!-- 百度分享 End -->
 	  
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小米/">小米</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
 
 	  
 <span>
-Updated:<time datetime="2016-04-24T09:28:37.286Z" itemprop="dateModified">2016-04-24</time>
+Updated:<time datetime="2016-04-29T13:58:39.153Z" itemprop="dateModified">2016-04-29</time>
 </span>
 
 
@@ -170,19 +178,10 @@ Updated:<time datetime="2016-04-24T09:28:37.286Z" itemprop="dateModified">2016-0
     
 <nav id="article-nav">
   
-    <a href="/2013/04/29/reset-forgot-mysql-root-password/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Ubuntu下重置忘记的MySql root密码
-        
-      </div>
-    </a>
   
-  
-    <a href="/2013/04/26/use-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/04/21/java-security-illegal-key-size/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">hexo使用笔记</div>
+      <div class="article-nav-title">AES加密时报java.security.InvalidKeyException Illegal key size</div>
     </a>
   
 </nav>
@@ -195,7 +194,7 @@ Updated:<time datetime="2016-04-24T09:28:37.286Z" itemprop="dateModified">2016-0
 
 <!-- 多说评论框 start -->
 <section id="comments">
-  <div class="ds-thread"  data-thread-key="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/" data-title="小米2连接Ubuntu12.04进行调试" data-url="http://howiefh.github.io/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/" id="ds_thread">
+  <div class="ds-thread"  data-thread-key="/2016/04/29/hexo-s-calendar-plugin/" data-title="Hexo的日历插件" data-url="http://howiefh.github.io/2016/04/29/hexo-s-calendar-plugin/" id="ds_thread">
     <noscript>Please enable JavaScript to view the <a href="//duoshuo.com/?ref_noscript">comments powered by duoshuo.</a></noscript>
   </div>
 </section>
@@ -207,7 +206,7 @@ Updated:<time datetime="2016-04-24T09:28:37.286Z" itemprop="dateModified">2016-0
   <div id="toc" class="toc-aside">
   <h2 class="toc-title">Contents</h2>
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#运行lsusb"><span class="toc-number">1.</span> <span class="toc-text">运行lsusb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑-etc-udev-rules-d-50-android-rules中的规则"><span class="toc-number">2.</span> <span class="toc-text">编辑/etc/udev/rules.d/50-android.rules中的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变更权限"><span class="toc-number">3.</span> <span class="toc-text">变更权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启udev服务"><span class="toc-number">4.</span> <span class="toc-text">重启udev服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#杀死adb正在运行的服务，查看连接的设备"><span class="toc-number">5.</span> <span class="toc-text">杀死adb正在运行的服务，查看连接的设备</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">2.</span> <span class="toc-text">配置</span></a></li></ol>
     
   </div>
 

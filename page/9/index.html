@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>小米2连接Ubuntu12.04进行调试 | 净土</title>
+  <title>净土</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="A blog of howiefh.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="小米2连接Ubuntu12.04进行调试">
-<meta property="og:url" content="http://howiefh.github.io/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="净土">
+<meta property="og:url" content="http://howiefh.github.io/page/9/index.html">
 <meta property="og:site_name" content="净土">
 <meta property="og:description" content="A blog of howiefh.">
-<meta property="og:updated_time" content="2016-04-24T09:28:37.286Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小米2连接Ubuntu12.04进行调试">
+<meta name="twitter:title" content="净土">
 <meta name="twitter:description" content="A blog of howiefh.">
   
     <link rel="alternate" href="/atom.xml" title="净土" type="application/atom+xml">
@@ -94,17 +93,19 @@ var _hmt = _hmt || [];
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-xiaomi2-connect-ubuntu12.04-debugging" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-software-which-behaves-like-vim" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
-<a href="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/" class="article-date">
-  <time datetime="2013-04-29T07:32:38.000Z" itemprop="datePublished">2013-04-29</time>
+<a href="/2012/03/17/software-which-behaves-like-vim/" class="article-date">
+  <time datetime="2012-03-17T15:03:09.000Z" itemprop="datePublished">2012-03-17</time>
 </a>
 
 
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
+    <a class="article-category-link" href="/categories/Vim/">Vim</a>
   </div>
 
   </div>
@@ -114,8 +115,8 @@ var _hmt = _hmt || [];
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      小米2连接Ubuntu12.04进行调试
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/03/17/software-which-behaves-like-vim/">用vim的方式操作你的软件</a>
     </h1>
   
 
@@ -123,94 +124,54 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-		
-		<div id="toc" class="toc-article">
-			<h2 class="toc-title"><span>Contents</span></h2>
-		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#运行lsusb"><span class="toc-number">1.</span> <span class="toc-text">运行lsusb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑-etc-udev-rules-d-50-android-rules中的规则"><span class="toc-number">2.</span> <span class="toc-text">编辑/etc/udev/rules.d/50-android.rules中的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变更权限"><span class="toc-number">3.</span> <span class="toc-text">变更权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启udev服务"><span class="toc-number">4.</span> <span class="toc-text">重启udev服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#杀死adb正在运行的服务，查看连接的设备"><span class="toc-number">5.</span> <span class="toc-text">杀死adb正在运行的服务，查看连接的设备</span></a></li></ol>
-		
-		</div>
-		
-        <h2 id="运行lsusb"><a href="#运行lsusb" class="headerlink" title="运行lsusb"></a>运行lsusb</h2><p>打开终端，在未连接小米的情况下运行lsusb，之后连接小米再运行lsusb，比较两次的输出应该会发现多出这样一行：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Bus </span><span class="number">001</span> Device <span class="number">007</span>: ID <span class="number">2717</span>:xxxx</span><br></pre></td></tr></table></figure></p>
-<p>其中<code>xxxx</code>应该是因人而异的，这个ID就是咱们的小米了。请记下这个ID，之后会用到。</p>
-<a id="more"></a>
-<h2 id="编辑-etc-udev-rules-d-50-android-rules中的规则"><a href="#编辑-etc-udev-rules-d-50-android-rules中的规则" class="headerlink" title="编辑/etc/udev/rules.d/50-android.rules中的规则"></a>编辑/etc/udev/rules.d/50-android.rules中的规则</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi  <span class="regexp">/etc/u</span>dev<span class="regexp">/rules.d/</span><span class="number">50</span>-android.rules</span><br></pre></td></tr></table></figure>
-<p>在打开的文件中增加以下文本：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">SUBSYSTEM</span>==<span class="string">"usb"</span>, SYSFS&#123;idVendor&#125;==<span class="string">"2717"</span>, MODE==<span class="string">"0666"</span></span><br><span class="line"><span class="attr">SUBSYSTEM</span>==<span class="string">"usb_device"</span>, SYSFS&#123;idVendor&#125;==<span class="string">"2717"</span>, MODE==<span class="string">"0666"</span></span><br><span class="line"><span class="attr">SUBSYSTEM</span>==<span class="string">"usb"</span>, ATTR&#123;idVendor&#125;==<span class="string">"2717"</span>, ATTR&#123;idProduct&#125;==<span class="string">"xxxx"</span>, SYMLINK+=<span class="string">"android_adb"</span></span><br></pre></td></tr></table></figure></p>
-<p>替换<code>ATTR{idProduct}==&quot;xxxx&quot;</code>中的<code>xxxx</code>为你之前显示的结果。50-android.rules 文件名应该是随意的，如99-android.rules ，54-android.rules应该也可以。</p>
-<p><strong>注意</strong>：<code>SUBSYSTEM==&quot;usb&quot;, SYSFS{idVendor}==&quot;2717&quot;, MODE==&quot;0666&quot;</code>这句是给 ubuntu 7.01 以后的系统识别用的。而<code>SUBSYSTEM==&quot;usb_device&quot;, SYSFS{idVendor}==&quot;2717&quot;, MODE==&quot;0666&quot;</code>是给 Ubuntu 7.01之前的系统识别用的。</p>
-<h2 id="变更权限"><a href="#变更权限" class="headerlink" title="变更权限"></a>变更权限</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+rx <span class="regexp">/etc/u</span>dev<span class="regexp">/rules.d/</span><span class="number">50</span>-android.rules</span><br></pre></td></tr></table></figure>
-<h2 id="重启udev服务"><a href="#重启udev服务" class="headerlink" title="重启udev服务"></a>重启udev服务</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service udev <span class="built_in">restart</span></span><br></pre></td></tr></table></figure>
-<h2 id="杀死adb正在运行的服务，查看连接的设备"><a href="#杀死adb正在运行的服务，查看连接的设备" class="headerlink" title="杀死adb正在运行的服务，查看连接的设备"></a>杀死adb正在运行的服务，查看连接的设备</h2><p>cd到你的sdk目录下的platform-tools中，执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ./adb <span class="keyword">kill</span>-<span class="keyword">server</span></span><br><span class="line">sudo ./adb devices</span><br></pre></td></tr></table></figure></p>
-<p>如果List of devices attached下没有设备。请执行如下操作：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~/.android/</span><br><span class="line"><span class="keyword">vi</span> adb_usb.ini</span><br></pre></td></tr></table></figure></p>
-<p>添加如下内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x2717</span><br></pre></td></tr></table></figure></p>
-<p>这个 0x2717 就是我们得到的设备号码。保存，退出，之后再切换到platform-tools，执行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo ./adb <span class="keyword">kill</span>-<span class="keyword">server</span></span><br><span class="line">sudo ./adb devices</span><br></pre></td></tr></table></figure></p>
-<p>这时List of devices attached下应该有设备了。之后就可以在eclipse里调试了。</p>
-<p>本文参考：<a href="http://www.cnblogs.com/loulijun/archive/2012/12/18/2823272.html" target="_blank" rel="external">http://www.cnblogs.com/loulijun/archive/2012/12/18/2823272.html</a></p>
-
+        <h2 id="Visual-Studio中的Vim插件"><a href="#Visual-Studio中的Vim插件" class="headerlink" title="Visual Studio中的Vim插件"></a>Visual Studio中的Vim插件</h2><h3 id="ViEmu（收费）"><a href="#ViEmu（收费）" class="headerlink" title="ViEmu（收费）"></a>ViEmu（收费）</h3><p>地址：<a href="http://www.viemu.com/">http://www.viemu.com/</a></p>
+<p><img src="http://www.viemu.com/viemu-movie.gif" alt="ViEmu" title="ViEmu"></p>
+<p>还有可以在Word，Outlook和SQL Server Management Studio中使用的ViEmu。</p>
+        
+          <p class="article-more-link">
+            <a href="/2012/03/17/software-which-behaves-like-vim/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
 	  
-	  <!-- 百度分享 Start -->
-	  <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
-	  <!-- 百度分享 End -->
+	  <a data-url="http://howiefh.github.io/2012/03/17/software-which-behaves-like-vim/" data-id="cinlpq7hx0000mgp4c0c6m10d" data_title="用vim的方式操作你的软件" data_summary="Visual Studio中的Vim插件ViEmu（收..." class="article-share-link">Share</a>
+      
+
+      
+        <a href="http://howiefh.github.io/2012/03/17/software-which-behaves-like-vim/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="/2012/03/17/software-which-behaves-like-vim/">暂无评论</a>
+      
 	  
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/小米/">小米</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vim/">Vim</a></li></ul>
 
 	  
 <span>
-Updated:<time datetime="2016-04-24T09:28:37.286Z" itemprop="dateModified">2016-04-24</time>
+Updated:<time datetime="2016-04-24T09:23:34.208Z" itemprop="dateModified">2016-04-24</time>
 </span>
 
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2013/04/29/reset-forgot-mysql-root-password/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Ubuntu下重置忘记的MySql root密码
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2013/04/26/use-hexo/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">hexo使用笔记</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
 
 
-<!-- 多说评论框 start -->
-<section id="comments">
-  <div class="ds-thread"  data-thread-key="/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/" data-title="小米2连接Ubuntu12.04进行调试" data-url="http://howiefh.github.io/2013/04/29/xiaomi2-connect-ubuntu12.04-debugging/" id="ds_thread">
-    <noscript>Please enable JavaScript to view the <a href="//duoshuo.com/?ref_noscript">comments powered by duoshuo.</a></noscript>
-  </div>
-</section>
-<!-- 多说评论框 end -->
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+  </nav>
 
 </section>
         
           
-  <div id="toc" class="toc-aside">
-  <h2 class="toc-title">Contents</h2>
-    
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#运行lsusb"><span class="toc-number">1.</span> <span class="toc-text">运行lsusb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑-etc-udev-rules-d-50-android-rules中的规则"><span class="toc-number">2.</span> <span class="toc-text">编辑/etc/udev/rules.d/50-android.rules中的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变更权限"><span class="toc-number">3.</span> <span class="toc-text">变更权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重启udev服务"><span class="toc-number">4.</span> <span class="toc-text">重启udev服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#杀死adb正在运行的服务，查看连接的设备"><span class="toc-number">5.</span> <span class="toc-text">杀死adb正在运行的服务，查看连接的设备</span></a></li></ol>
-    
-  </div>
-
 <aside id="sidebar">
 
   
@@ -358,10 +319,6 @@ Updated:<time datetime="2016-04-24T09:28:37.286Z" itemprop="dateModified">2016-0
 
 
 
-<!-- 百度分享 start -->
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","douban","bdysc","sqq","qq","hi","baidu","huaban","youdao","sdo","mail","xg","diandian","fx","copy","print"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-<!-- 百度分享 end -->
-
 
 <script src="/js/jquery.min.js"></script>
 
@@ -378,11 +335,6 @@ Updated:<time datetime="2016-04-24T09:28:37.286Z" itemprop="dateModified">2016-0
 	<script src="/js/gotop.js"></script>
 	-->
 
-
-	<a class="icon-toc-toggle" href="javascript:void(0)" title="文章目录"></a>
-	<!--
-	<script src="/js/toc_aside_toggle.js"></script>
-	-->
 
 </div>
 <script src="/js/toc_aside_toggle.js"></script>
