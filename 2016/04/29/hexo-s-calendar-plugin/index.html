@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo的日历插件 | 净土</title>
+  <title>Hexo日历插件 | 净土</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Hexo 日历; Hexo Calendar; Hexo plugin; Calendar Plugin;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo的日历插件">
+<meta property="og:title" content="Hexo日历插件">
 <meta property="og:url" content="http://howiefh.github.io/2016/04/29/hexo-s-calendar-plugin/index.html">
 <meta property="og:site_name" content="净土">
 <meta property="og:description" content="Hexo 日历; Hexo Calendar; Hexo plugin; Calendar Plugin;">
-<meta property="og:updated_time" content="2016-04-29T13:58:39.153Z">
+<meta property="og:updated_time" content="2016-04-30T13:52:38.664Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo的日历插件">
+<meta name="twitter:title" content="Hexo日历插件">
 <meta name="twitter:description" content="Hexo 日历; Hexo Calendar; Hexo plugin; Calendar Plugin;">
   
     <link rel="alternate" href="/atom.xml" title="净土" type="application/atom+xml">
@@ -115,7 +115,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo的日历插件
+      Hexo日历插件
     </h1>
   
 
@@ -136,24 +136,38 @@ var _hmt = _hmt || [];
 <a id="more"></a>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>执行下面的命令</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> &lt;你的博客路径&gt;</span><br><span class="line">npm install --<span class="keyword">save</span> git:<span class="comment">//github.com/howiefh/hexo-generator-calendar.git</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>可以在博客根目录的<code>_config.yml</code>中配置这个插件</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">calendar:</span></span><br><span class="line"><span class="attr">    single:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    root:</span> calendar/</span><br></pre></td></tr></table></figure>
-<ul>
-<li>single - 生成一个单独的json文件。 (默认: true)</li>
-<li>root - 当single的值是false时，这个值才会生效，用来指定按月份生成的多个json文件的根目录。 (默认: calendar/)</li>
-</ul>
-<p>如果你在其他 <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a> 主题中想使用这个插件，你需要在相应目录中添加以下几个文件：</p>
+<p>当然只安装 <a href="https://github.com/howiefh/hexo-generator-calendar" target="_blank" rel="external">hexo-generator-calendar</a> 是不够的，你还得使用主题 <a href="http://howiefh.github.io/2014/04/20/hexo-optimize-and-my-theme-landscape-f/">Landscape-F</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;你的博客路径&gt;</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/howiefh/hexo-theme-landscape-f.git themes/landscape<span class="_">-f</span></span><br></pre></td></tr></table></figure>
+<p>在博客根目录的<code>_config.yml</code>中配置主题</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">theme:</span> landscape-f</span><br></pre></td></tr></table></figure>
+<p>如果你在其他 <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a> 主题中也想显示日历，你需要在相应目录中添加以下几个文件：</p>
 <ul>
 <li><a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/layout/_widget/calendar.ejs" target="_blank" rel="external">calendar.ejs</a></li>
-<li><a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/languages.js" target="_blank" rel="external">languages.js</a></li>
+<li><a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/languages.js" target="_blank" rel="external">languages.js</a> (多亏了<a href="https://github.com/xdan/datetimepicker/" target="_blank" rel="external">https://github.com/xdan/datetimepicker/</a>)</li>
 <li><a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/calendar.js" target="_blank" rel="external">calendar.js</a></li>
 <li><a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/css/_partial/calendar.styl" target="_blank" rel="external">calendar.styl</a></li>
 </ul>
 <p>此外，你还需要在 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/css/_variables.styl" target="_blank" rel="external">_variables.styl</a> 中添加以下内容</p>
 <figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">color</span>-calendar-border = <span class="meta">#d1d1d1</span></span><br><span class="line"><span class="keyword">color</span>-calendar-post-bg = <span class="meta">#<span class="number">007</span>acc</span></span><br><span class="line"><span class="keyword">color</span>-calendar-hover-bg = <span class="meta">#<span class="number">686868</span></span></span><br></pre></td></tr></table></figure>
 <p>在 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/layout/_partial/after-footer.ejs" target="_blank" rel="external">after-footer.ejs</a> 中添加以下内容</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">%</span></span></span><span class="ruby"> <span class="keyword">if</span> (theme.widgets.indexOf(<span class="string">'calendar'</span>) != -<span class="number">1</span>)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span></span></span><span class="ruby"> js(<span class="string">'js/languages'</span>) </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span></span></span><span class="ruby"> js(<span class="string">'js/calendar'</span>) </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">    $(<span class="string">'#calendar'</span>).aCalendar(<span class="string">'&lt;%=</span></span></span><span class="ruby"> config.language </span><span class="xml"><span class="undefined">%&gt;', &#123;single:&lt;%=</span></span><span class="ruby"> config.calendar.single </span><span class="xml"><span class="undefined">%&gt;, root:'&lt;%=</span></span><span class="ruby"> config.calendar.root </span><span class="xml"><span class="undefined">%&gt;'&#125;);</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span></span></span><span class="ruby"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>最后，希望大家喜欢这款插件O(∩_∩)O。</p>
+<figure class="highlight erb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">%</span></span></span><span class="ruby"> <span class="keyword">if</span> (theme.widgets.indexOf(<span class="string">'calendar'</span>) != -<span class="number">1</span>)&#123; </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%-</span></span></span><span class="ruby"> js(<span class="string">'js/languages'</span>) </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">%-</span></span></span><span class="ruby"> js(<span class="string">'js/calendar'</span>) </span><span class="xml"><span class="tag">%&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">'#calendar'</span>).aCalendar(<span class="string">'&lt;%=</span></span></span><span class="ruby"> theme.calendar.language <span class="params">||</span> config.language </span><span class="xml"><span class="undefined">%&gt;', $.extend(&lt;%-</span></span><span class="ruby"> JSON.stringify(theme.calendar.options ) </span><span class="xml"><span class="undefined">%&gt;, &#123;single:&lt;%=</span></span><span class="ruby"> config.calendar.single </span><span class="xml"><span class="undefined">%&gt;, root:'&lt;%=</span></span><span class="ruby"> config.calendar.root </span><span class="xml"><span class="undefined">%&gt;'&#125;));</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span></span></span><span class="ruby"> &#125; </span><span class="xml"><span class="tag">%&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>可以在博客根目录的<code>_config.yml</code>中配置这个插件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">calendar:</span></span><br><span class="line"><span class="attr">    single:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    root:</span> calendar/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>single - 生成一个单独的json文件。 (默认: true)</li>
+<li>root - 当single的值是false时，这个值才会生效，用来指定按月份生成的多个json文件的根目录。 (默认: calendar/)</li>
+</ul>
+<p>上面是 <a href="https://github.com/howiefh/hexo-generator-calendar" target="_blank" rel="external">hexo-generator-calendar</a> 插件的配置，接下来讲下 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/calendar.js" target="_blank" rel="external">calendar.js</a> 的配置。主要就是语言和其它选项的配置。</p>
+<ul>
+<li><p>语言<br>  如果主题根目录下<code>_config.yml</code>文件中有如下配置，将优先使用此处的配置；否则使用博客根目录的<code>_config.yml</code>中的language配置项的值，如果此项仍为空或者无效则使用 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/calendar.js" target="_blank" rel="external">calendar.js</a> 中的默认配置（英文）。</p>
+  <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">calendar:</span></span><br><span class="line">  language: <span class="built_in">zh</span>-CN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>选项<br>  对于 months、dayOfWeekShort、dayOfWeek、postsMonthTip、titleFormat这五项配置优先选用主题根目录下<code>_config.yml</code>中的配置，其次是 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/languages.js" target="_blank" rel="external">languages.js</a> 中的配置（语言配置参考上面），最后是 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/calendar.js" target="_blank" rel="external">calendar.js</a> 的默认配置。对于single、root这两项，优先选用博客根目录的<code>_config.yml</code>中的 <a href="https://github.com/howiefh/hexo-generator-calendar" target="_blank" rel="external">hexo-generator-calendar</a> 的配置，其次是主题根目录下<code>_config.yml</code>中的配置，最后是 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/calendar.js" target="_blank" rel="external">calendar.js</a> 的默认配置。其他项优先选择主题根目录下<code>_config.yml</code>中的配置，最后是 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/calendar.js" target="_blank" rel="external">calendar.js</a> 的默认配置。</p>
+</li>
+</ul>
+<p>主题根目录下<code>_config.yml</code>中的配置示例<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">calendar</span>:</span><br><span class="line">  <span class="attribute">language</span>: zh-CN</span><br><span class="line">  <span class="attribute">options</span>:</span><br><span class="line">    <span class="attribute">months</span>: [<span class="string">'January'</span>, <span class="string">'February'</span>, <span class="string">'March'</span>, <span class="string">'April'</span>, <span class="string">'May'</span>, <span class="string">'June'</span>, <span class="string">'July'</span>, <span class="string">'August'</span>, <span class="string">'September'</span>, <span class="string">'October'</span>, <span class="string">'November'</span>, <span class="string">'December'</span>]</span><br><span class="line">    <span class="attribute">dayOfWeekShort</span>: [<span class="string">'S'</span>, <span class="string">'M'</span>, <span class="string">'T'</span>, <span class="string">'W'</span>, <span class="string">'T'</span>, <span class="string">'F'</span>, <span class="string">'S'</span>]</span><br><span class="line">    <span class="attribute">dayOfWeek</span>: [<span class="string">'Sunday'</span>, <span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span>, <span class="string">'Thursday'</span>, <span class="string">'Friday'</span>, <span class="string">'Saturday'</span>]</span><br><span class="line">    <span class="attribute">postsMonthTip</span>: <span class="string">'Posts published in LMM yyyy'</span></span><br><span class="line">    <span class="attribute">titleFormat</span>: <span class="string">'yyyy LMM'</span></span><br><span class="line">    <span class="attribute">titleLinkFormat</span>: <span class="string">'/archives/yyyy/MM/'</span></span><br><span class="line">    <span class="attribute">headArrows</span>: &#123;<span class="attribute">previous</span>: <span class="string">'&lt;span class="cal-prev"&gt;&lt;/span&gt;'</span>, <span class="attribute">next</span>: <span class="string">'&lt;span class="cal-next"&gt;&lt;/span&gt;'</span>&#125;</span><br><span class="line">    <span class="attribute">footArrows</span>: &#123;<span class="attribute">previous</span>: <span class="string">' '</span>, <span class="attribute">next</span>: <span class="string">' '</span>&#125;</span><br><span class="line">    <span class="attribute">weekOffset</span>: <span class="number">0</span></span><br><span class="line">    <span class="attribute">single</span>: false</span><br><span class="line">    <span class="attribute">root</span>: <span class="string">'/calendar/'</span></span><br><span class="line">    <span class="attribute">url</span>: <span class="string">'/calendar.json'</span></span><br></pre></td></tr></table></figure></p>
+<p>当然，关于配置，你还可以直接修改 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/layout/_partial/after-footer.ejs" target="_blank" rel="external">after-footer.ejs</a> 或者 <a href="https://github.com/howiefh/hexo-theme-landscape-f/blob/master/source/js/calendar.js" target="_blank" rel="external">calendar.js</a>。事实上不做任何配置也是可以使用的，最多你可能只需要设置一下语言。</p>
+<p>到此，怎么安装使用这款日历插件应该就讲清楚了，希望大家喜欢这款日历插件O(∩_∩)O。</p>
 
       
     </div>
@@ -168,7 +182,7 @@ var _hmt = _hmt || [];
 
 	  
 <span>
-Updated:<time datetime="2016-04-29T13:58:39.153Z" itemprop="dateModified">2016-04-29</time>
+Updated:<time datetime="2016-04-30T13:52:38.664Z" itemprop="dateModified">2016-04-30</time>
 </span>
 
 
@@ -194,7 +208,7 @@ Updated:<time datetime="2016-04-29T13:58:39.153Z" itemprop="dateModified">2016-0
 
 <!-- 多说评论框 start -->
 <section id="comments">
-  <div class="ds-thread"  data-thread-key="/2016/04/29/hexo-s-calendar-plugin/" data-title="Hexo的日历插件" data-url="http://howiefh.github.io/2016/04/29/hexo-s-calendar-plugin/" id="ds_thread">
+  <div class="ds-thread"  data-thread-key="/2016/04/29/hexo-s-calendar-plugin/" data-title="Hexo日历插件" data-url="http://howiefh.github.io/2016/04/29/hexo-s-calendar-plugin/" id="ds_thread">
     <noscript>Please enable JavaScript to view the <a href="//duoshuo.com/?ref_noscript">comments powered by duoshuo.</a></noscript>
   </div>
 </section>
@@ -274,7 +288,7 @@ Updated:<time datetime="2016-04-29T13:58:39.153Z" itemprop="dateModified">2016-0
       <ul>
         
           <li>
-            <a href="/2016/04/29/hexo-s-calendar-plugin/">Hexo的日历插件</a>
+            <a href="/2016/04/29/hexo-s-calendar-plugin/">Hexo日历插件</a>
           </li>
         
           <li>
@@ -405,12 +419,16 @@ ga('send', 'pageview');
 
 
 
-    <script src="/js/languages.js"></script>
-    <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script src="/js/calendar.js"></script>
 
-    <script type="text/javascript">
-    $('#calendar').aCalendar('default', {single:true, root:'calendar'});
-    </script>
+  <script type="text/javascript">
+  $(function() {
+    
+    $('#calendar').aCalendar('zh-CN', {single:true, root:'calendar'});
+    
+  });
+  </script>
 
 
   </div>

@@ -134,7 +134,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
 	  
-	  <a data-url="http://howiefh.github.io/2015/03/05/hibernate-note/" data-id="cinlpq7xr00a1mgp4mfit6c05" data_title="Hibernate笔记" data_summary="对象/关系数据库映射(ORM)ORM全称是Object..." class="article-share-link">Share</a>
+	  <a data-url="http://howiefh.github.io/2015/03/05/hibernate-note/" data-id="cinolp3vm00ad7sp43psmc7m2" data_title="Hibernate笔记" data_summary="对象/关系数据库映射(ORM)ORM全称是Object..." class="article-share-link">Share</a>
       
 
       
@@ -229,7 +229,7 @@ Updated:<time datetime="2016-04-23T09:05:56.469Z" itemprop="dateModified">2016-0
       <ul>
         
           <li>
-            <a href="/2016/04/29/hexo-s-calendar-plugin/">Hexo的日历插件</a>
+            <a href="/2016/04/29/hexo-s-calendar-plugin/">Hexo日历插件</a>
           </li>
         
           <li>
@@ -351,12 +351,16 @@ ga('send', 'pageview');
 
 
 
-    <script src="/js/languages.js"></script>
-    <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script src="/js/calendar.js"></script>
 
-    <script type="text/javascript">
-    $('#calendar').aCalendar('default', {single:true, root:'calendar'});
-    </script>
+  <script type="text/javascript">
+  $(function() {
+    
+    $('#calendar').aCalendar('zh-CN', {single:true, root:'calendar'});
+    
+  });
+  </script>
 
 
   </div>

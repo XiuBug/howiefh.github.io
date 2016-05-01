@@ -303,12 +303,16 @@ ga('send', 'pageview');
 
 
 
-    <script src="/js/languages.js"></script>
-    <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script src="/js/calendar.js"></script>
 
-    <script type="text/javascript">
-    $('#calendar').aCalendar('default', {single:true, root:'calendar'});
-    </script>
+  <script type="text/javascript">
+  $(function() {
+    
+    $('#calendar').aCalendar('zh-CN', {single:true, root:'calendar'});
+    
+  });
+  </script>
 
 
   </div>

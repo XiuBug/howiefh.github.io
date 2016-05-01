@@ -134,7 +134,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
 	  
-	  <a data-url="http://howiefh.github.io/2013/04/26/use-hexo/" data-id="cinlpq7io0005mgp4r8pfmds1" data_title="hexo使用笔记" data_summary="折腾Otcopress时发现了hexo，主题很合我胃口..." class="article-share-link">Share</a>
+	  <a data-url="http://howiefh.github.io/2013/04/26/use-hexo/" data-id="cinolp39j00027sp4hu67uqr3" data_title="hexo使用笔记" data_summary="折腾Otcopress时发现了hexo，主题很合我胃口..." class="article-share-link">Share</a>
       
 
       
@@ -229,7 +229,7 @@ Updated:<time datetime="2016-04-23T09:05:55.855Z" itemprop="dateModified">2016-0
       <ul>
         
           <li>
-            <a href="/2016/04/29/hexo-s-calendar-plugin/">Hexo的日历插件</a>
+            <a href="/2016/04/29/hexo-s-calendar-plugin/">Hexo日历插件</a>
           </li>
         
           <li>
@@ -351,12 +351,16 @@ ga('send', 'pageview');
 
 
 
-    <script src="/js/languages.js"></script>
-    <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script src="/js/calendar.js"></script>
 
-    <script type="text/javascript">
-    $('#calendar').aCalendar('default', {single:true, root:'calendar'});
-    </script>
+  <script type="text/javascript">
+  $(function() {
+    
+    $('#calendar').aCalendar('zh-CN', {single:true, root:'calendar'});
+    
+  });
+  </script>
 
 
   </div>

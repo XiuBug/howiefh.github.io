@@ -134,7 +134,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
 	  
-	  <a data-url="http://howiefh.github.io/2013/11/09/install-pam_mysql-on-suse-11-sp2/" data-id="cinlpq7km000tmgp4ula06fld" data_title="在SUSE 11 SP2 中安装pam_mysql" data_summary="近期项目中需要在SUSE服务器中安装vsftpd，并且..." class="article-share-link">Share</a>
+	  <a data-url="http://howiefh.github.io/2013/11/09/install-pam_mysql-on-suse-11-sp2/" data-id="cinolp3d100117sp4l8q8tpl2" data_title="在SUSE 11 SP2 中安装pam_mysql" data_summary="近期项目中需要在SUSE服务器中安装vsftpd，并且..." class="article-share-link">Share</a>
       
 
       
@@ -229,7 +229,7 @@ Updated:<time datetime="2016-04-24T10:35:32.195Z" itemprop="dateModified">2016-0
       <ul>
         
           <li>
-            <a href="/2016/04/29/hexo-s-calendar-plugin/">Hexo的日历插件</a>
+            <a href="/2016/04/29/hexo-s-calendar-plugin/">Hexo日历插件</a>
           </li>
         
           <li>
@@ -351,12 +351,16 @@ ga('send', 'pageview');
 
 
 
-    <script src="/js/languages.js"></script>
-    <script src="/js/calendar.js"></script>
+  <script src="/js/languages.js"></script>
+  <script src="/js/calendar.js"></script>
 
-    <script type="text/javascript">
-    $('#calendar').aCalendar('default', {single:true, root:'calendar'});
-    </script>
+  <script type="text/javascript">
+  $(function() {
+    
+    $('#calendar').aCalendar('zh-CN', {single:true, root:'calendar'});
+    
+  });
+  </script>
 
 
   </div>
