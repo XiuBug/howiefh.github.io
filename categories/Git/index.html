@@ -95,6 +95,72 @@ var _hmt = _hmt || [];
       <div class="outer">
         <section id="main">
   
+    <article id="post-git-internals" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+<a href="/2016/05/16/git-internals/" class="article-date">
+  <time datetime="2016-05-16T12:51:10.000Z" itemprop="datePublished">2016-05-16</time>
+</a>
+
+
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/16/git-internals/">Git 内幕</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="对待数据的方式"><a href="#对待数据的方式" class="headerlink" title="对待数据的方式"></a>对待数据的方式</h3><p>几乎所有版本控制工具都是记录与初始文件的差异，而 Git 是记录快照，每次提交更新时，就是当前工作目录下的所有文件的完整数据，而不是差异，当然如果提交时，文件没有被修改，不再重新存储该文件，而是指向上次存储的文件。</p>
+<p>假设提交了5次，对于工作目录的文件A，在第三和第五次提交时有修改<br><figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 其他版本控制</span><br><span class="line">A (<span class="function"><span class="title">v1</span>) --------------&gt;</span> △<span class="number">1</span> (<span class="function"><span class="title">v3</span>) ---------------&gt;</span> △<span class="number">2</span> (v5)</span><br><span class="line"># Git</span><br><span class="line">A (<span class="function"><span class="title">v1</span>) ---&gt;</span> A (<span class="function"><span class="title">v2</span>) ---&gt;</span> A1 (<span class="function"><span class="title">v3</span>) ---&gt;</span> A1 (<span class="function"><span class="title">v4</span>) ---&gt;</span> A2 (v5)</span><br></pre></td></tr></table></figure></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/05/16/git-internals/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+	  
+	  <a data-url="http://howiefh.github.io/2016/05/16/git-internals/" data-id="cios7gfdk006ns0p44ytop5hp" data_title="Git 内幕" data_summary="基础对待数据的方式几乎所有版本控制工具都是记录与初始文..." class="article-share-link">Share</a>
+      
+
+      
+        <a href="http://howiefh.github.io/2016/05/16/git-internals/#ds-thread" class="ds-thread-count article-comment-link" data-thread-key="/2016/05/16/git-internals/">暂无评论</a>
+      
+	  
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+	  
+<span>
+Updated:<time datetime="2016-05-29T06:28:03.132Z" itemprop="dateModified">2016-05-29</time>
+</span>
+
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+  
     <article id="post-setting-up-git-server" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -135,7 +201,7 @@ var _hmt = _hmt || [];
     </div>
     <footer class="article-footer">
 	  
-	  <a data-url="http://howiefh.github.io/2014/10/13/setting-up-git-server/" data-id="cinolp3lp004m7sp4yju5d7xq" data_title="搭建git服务器" data_summary="目前 GitHub 作为代码托管库，拥有上百万的用户，..." class="article-share-link">Share</a>
+	  <a data-url="http://howiefh.github.io/2014/10/13/setting-up-git-server/" data-id="cios7gfb6004ks0p43kqw8w14" data_title="搭建git服务器" data_summary="目前 GitHub 作为代码托管库，拥有上百万的用户，..." class="article-share-link">Share</a>
       
 
       
@@ -200,7 +266,7 @@ Updated:<time datetime="2016-04-23T09:05:56.350Z" itemprop="dateModified">2016-0
     </div>
     <footer class="article-footer">
 	  
-	  <a data-url="http://howiefh.github.io/2014/10/11/git-encoding/" data-id="cinolp3lg004f7sp4a66qdch5" data_title="解决git在Windows下的乱码问题" data_summary="在Linux及托管网站上默认的编码都是utf-8，而W..." class="article-share-link">Share</a>
+	  <a data-url="http://howiefh.github.io/2014/10/11/git-encoding/" data-id="cios7gfb0004gs0p4tejlgxxs" data_title="解决git在Windows下的乱码问题" data_summary="在Linux及托管网站上默认的编码都是utf-8，而W..." class="article-share-link">Share</a>
       
 
       
@@ -255,9 +321,23 @@ Updated:<time datetime="2016-04-23T09:05:56.346Z" itemprop="dateModified">2016-0
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="git别名"><a href="#git别名" class="headerlink" title="git别名"></a>git别名</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> config --<span class="meta">global</span> <span class="meta">alias</span>.ci <span class="string">"commit"</span></span><br><span class="line"><span class="symbol">git</span> config --<span class="meta">global</span> <span class="meta">alias</span>.co <span class="string">"chechout"</span></span><br><span class="line"><span class="symbol">git</span> config --<span class="meta">global</span> <span class="meta">alias</span>.st <span class="string">"status"</span></span><br><span class="line"><span class="symbol">git</span> config --<span class="meta">global</span> <span class="meta">alias</span>.<span class="keyword">br </span><span class="string">"branch"</span></span><br></pre></td></tr></table></figure>
+        <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git 配置文件 <code>.gitconfig</code>，系统配置位于<code>/etc/gitconfig</code>（Windows 该文件在Git安装目录下），全局配置位于用户目录下，项目配置位于仓库目录下。<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">config</span> --list                 <span class="meta"># 显示当前的Git配置</span></span><br><span class="line">git <span class="built_in">config</span> user.name              <span class="meta"># 显示当前配置项的值</span></span><br><span class="line">git <span class="built_in">config</span> -e [--global|--system] <span class="meta"># 编辑Git配置文件</span></span><br></pre></td></tr></table></figure></p>
+<p>配置别名<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="keyword">global</span> <span class="keyword">alias</span>.ci <span class="string">"commit"</span></span><br><span class="line">git config --<span class="keyword">global</span> <span class="keyword">alias</span>.co <span class="string">"chechout"</span></span><br><span class="line">git config --<span class="keyword">global</span> <span class="keyword">alias</span>.st <span class="string">"status"</span></span><br><span class="line">git config --<span class="keyword">global</span> <span class="keyword">alias</span>.br <span class="string">"branch"</span></span><br><span class="line">git config --<span class="keyword">global</span> <span class="keyword">alias</span>.unstage <span class="string">'reset HEAD --'</span></span><br><span class="line">git config --<span class="keyword">global</span> <span class="keyword">alias</span>.last <span class="string">'log -1 HEAD'</span></span><br><span class="line">git config --<span class="keyword">global</span> <span class="keyword">alias</span>.visual <span class="string">'!gitk'</span></span><br></pre></td></tr></table></figure></p>
+<p>如果想要执行外部命令，而不是一个 Git 子命令，可以在命令前面加入 <code>!</code> 符号。</p>
 <h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><p>如果是版本库级别的忽略用<code>.gitignore</code>；如果仅仅是个人的忽略用<code>.git/info/exclude</code>，不会将此设置传播出去</p>
-<p>忽略规则:<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此为注释 – 将被 Git 忽略</span></span><br><span class="line">*.a		<span class="comment"># 忽略所有 .a 结尾的文件</span></span><br><span class="line">!<span class="class"><span class="keyword">lib</span>.<span class="title">a</span>		<span class="comment"># 但 lib.a 除外</span></span></span><br><span class="line">/TODO		<span class="comment"># 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span></span><br><span class="line">build/		<span class="comment"># 忽略 build/ 目录下的所有文件</span></span><br><span class="line">doc/*.txt	<span class="comment"># 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span></span><br></pre></td></tr></table></figure></p>
+<p>文件 .gitignore 的格式规范如下：</p>
+<ol>
+<li>所有空行或者以 ＃ 开头的行都会被 Git 忽略。</li>
+<li>可以使用标准的 glob 模式匹配。</li>
+<li>匹配模式可以以（<code>/</code>）开头防止递归。</li>
+<li>匹配模式可以以（<code>/</code>）结尾指定目录。</li>
+<li>要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（<code>!</code>）取反。</li>
+</ol>
+<p>所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。 星号（<code>*</code>）匹配零个或多个任意字符；<code>[abc]</code> 匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（<code>?</code>）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配（比如 <code>[0-9]</code> 表示匹配所有 0 到 9 的数字）。 使用两个星号（<code>*</code>) 表示匹配任意中间目录，比如<code>a/**/z</code> 可以匹配 <code>a/z</code>, <code>a/b/z</code> 或 <code>a/b/c/z</code>等。</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此为注释 – 将被 Git 忽略</span></span><br><span class="line">*.a          <span class="comment"># 忽略所有 .a 结尾的文件</span></span><br><span class="line">!<span class="class"><span class="keyword">lib</span>.<span class="title">a</span>       <span class="comment"># 但 lib.a 除外</span></span></span><br><span class="line">/TODO        <span class="comment"># 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span></span><br><span class="line">build/       <span class="comment"># 忽略 build/ 目录下的所有文件，包括 subdir/build/</span></span><br><span class="line">doc/*.txt    <span class="comment"># 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span></span><br><span class="line">doc/**<span class="regexp">/*.pdf # 忽略所有doc 目录下的 pdf文件</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://github.com/github/gitignore">github官方提供的gitignore模板</a></li>
+<li><a href="https://www.gitignore.io/">可以根据系统、IDE、语言生成gitignore文件的网站</a>
         
           <p class="article-more-link">
             <a href="/2013/05/02/git-note/#more">Read More</a>
@@ -267,7 +347,7 @@ Updated:<time datetime="2016-04-23T09:05:56.346Z" itemprop="dateModified">2016-0
     </div>
     <footer class="article-footer">
 	  
-	  <a data-url="http://howiefh.github.io/2013/05/02/git-note/" data-id="cinolp3aj00087sp4nr0m6jtt" data_title="Git学习笔记" data_summary="git别名1234git config --globa..." class="article-share-link">Share</a>
+	  <a data-url="http://howiefh.github.io/2013/05/02/git-note/" data-id="cios7gf3l0008s0p4v5kxn8n7" data_title="Git学习笔记" data_summary="配置Git 配置文件 .gitconfig，系统配置位..." class="article-share-link">Share</a>
       
 
       
@@ -279,7 +359,7 @@ Updated:<time datetime="2016-04-23T09:05:56.346Z" itemprop="dateModified">2016-0
 
 	  
 <span>
-Updated:<time datetime="2016-04-24T09:49:14.143Z" itemprop="dateModified">2016-04-24</time>
+Updated:<time datetime="2016-05-29T06:19:03.628Z" itemprop="dateModified">2016-05-29</time>
 </span>
 
 
@@ -322,7 +402,7 @@ Updated:<time datetime="2016-04-24T09:49:14.143Z" itemprop="dateModified">2016-0
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Database/MongoDB/">MongoDB</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/MySQL/">MySQL</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Eclipse/">Eclipse</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/FTP/">FTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">21</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/FreeMarker/">FreeMarker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Shiro/">Shiro</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/">JavaEE</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/Hibernate/">Hibernate</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/JSP/">JSP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/Spring/">Spring</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/jQuery/">jQuery</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Suse/">Suse</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ubuntu/">Ubuntu</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Database/MongoDB/">MongoDB</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/MySQL/">MySQL</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Eclipse/">Eclipse</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/FTP/">FTP</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">21</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/FreeMarker/">FreeMarker</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Shiro/">Shiro</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/">JavaEE</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/Hibernate/">Hibernate</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/JSP/">JSP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaEE/Spring/">Spring</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/jQuery/">jQuery</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Suse/">Suse</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ubuntu/">Ubuntu</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/编程/">编程</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件/">软件</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -332,7 +412,7 @@ Updated:<time datetime="2016-04-24T09:49:14.143Z" itemprop="dateModified">2016-0
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 14.75px; color: #65bfa7">Android</a> <a href="/tags/C/" style="font-size: 13.88px; color: #71c1c2">C</a> <a href="/tags/CAS/" style="font-size: 13px; color: #7dc3de">CAS</a> <a href="/tags/Chrome/" style="font-size: 13px; color: #7dc3de">Chrome</a> <a href="/tags/Clean-Code/" style="font-size: 13.88px; color: #71c1c2">Clean Code</a> <a href="/tags/Database/" style="font-size: 13px; color: #7dc3de">Database</a> <a href="/tags/Eclipse/" style="font-size: 13px; color: #7dc3de">Eclipse</a> <a href="/tags/FTP/" style="font-size: 13.88px; color: #71c1c2">FTP</a> <a href="/tags/FreeMarker/" style="font-size: 14.75px; color: #65bfa7">FreeMarker</a> <a href="/tags/Gcc/" style="font-size: 13px; color: #7dc3de">Gcc</a> <a href="/tags/Git/" style="font-size: 14.75px; color: #65bfa7">Git</a> <a href="/tags/Github-Pages/" style="font-size: 13px; color: #7dc3de">Github Pages</a> <a href="/tags/Hexo/" style="font-size: 15.63px; color: #59bd8b">Hexo</a> <a href="/tags/Hibernate/" style="font-size: 13px; color: #7dc3de">Hibernate</a> <a href="/tags/JSP/" style="font-size: 13px; color: #7dc3de">JSP</a> <a href="/tags/JVM/" style="font-size: 14.75px; color: #65bfa7">JVM</a> <a href="/tags/Java/" style="font-size: 15.63px; color: #59bd8b">Java</a> <a href="/tags/JavaMail/" style="font-size: 13px; color: #7dc3de">JavaMail</a> <a href="/tags/JavaScript/" style="font-size: 16.5px; color: #4dbc6f">JavaScript</a> <a href="/tags/Linux/" style="font-size: 13.88px; color: #71c1c2">Linux</a> <a href="/tags/Log/" style="font-size: 13px; color: #7dc3de">Log</a> <a href="/tags/Markdown/" style="font-size: 13.88px; color: #71c1c2">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 20px; color: #1db400">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 13.88px; color: #71c1c2">MySQL</a> <a href="/tags/PHP/" style="font-size: 16.5px; color: #4dbc6f">PHP</a> <a href="/tags/Rhythmbox/" style="font-size: 13px; color: #7dc3de">Rhythmbox</a> <a href="/tags/SSO/" style="font-size: 13px; color: #7dc3de">SSO</a> <a href="/tags/Servlet/" style="font-size: 13px; color: #7dc3de">Servlet</a> <a href="/tags/Shiro/" style="font-size: 13.88px; color: #71c1c2">Shiro</a> <a href="/tags/Spring/" style="font-size: 13.88px; color: #71c1c2">Spring</a> <a href="/tags/Suse/" style="font-size: 13px; color: #7dc3de">Suse</a> <a href="/tags/Thinking-in-Java/" style="font-size: 19.13px; color: #29b61c">Thinking in Java</a> <a href="/tags/Ubuntu/" style="font-size: 17.38px; color: #41ba53">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 18.25px; color: #35b838">Vim</a> <a href="/tags/VirtualBox/" style="font-size: 13px; color: #7dc3de">VirtualBox</a> <a href="/tags/Vsftpd/" style="font-size: 13px; color: #7dc3de">Vsftpd</a> <a href="/tags/jQuery/" style="font-size: 13px; color: #7dc3de">jQuery</a> <a href="/tags/pam-mysql/" style="font-size: 13px; color: #7dc3de">pam_mysql</a> <a href="/tags/小米/" style="font-size: 13px; color: #7dc3de">小米</a> <a href="/tags/软件/" style="font-size: 15.63px; color: #59bd8b">软件</a>
+      <a href="/tags/Android/" style="font-size: 14.75px; color: #65bfa7">Android</a> <a href="/tags/C/" style="font-size: 13.88px; color: #71c1c2">C</a> <a href="/tags/CAS/" style="font-size: 13px; color: #7dc3de">CAS</a> <a href="/tags/Chrome/" style="font-size: 13px; color: #7dc3de">Chrome</a> <a href="/tags/Clean-Code/" style="font-size: 13.88px; color: #71c1c2">Clean Code</a> <a href="/tags/Database/" style="font-size: 13px; color: #7dc3de">Database</a> <a href="/tags/Eclipse/" style="font-size: 13px; color: #7dc3de">Eclipse</a> <a href="/tags/FTP/" style="font-size: 13.88px; color: #71c1c2">FTP</a> <a href="/tags/FreeMarker/" style="font-size: 14.75px; color: #65bfa7">FreeMarker</a> <a href="/tags/Gcc/" style="font-size: 13px; color: #7dc3de">Gcc</a> <a href="/tags/Git/" style="font-size: 15.63px; color: #59bd8b">Git</a> <a href="/tags/Github-Pages/" style="font-size: 13px; color: #7dc3de">Github Pages</a> <a href="/tags/Hexo/" style="font-size: 15.63px; color: #59bd8b">Hexo</a> <a href="/tags/Hibernate/" style="font-size: 13px; color: #7dc3de">Hibernate</a> <a href="/tags/JSP/" style="font-size: 13px; color: #7dc3de">JSP</a> <a href="/tags/JVM/" style="font-size: 14.75px; color: #65bfa7">JVM</a> <a href="/tags/Java/" style="font-size: 15.63px; color: #59bd8b">Java</a> <a href="/tags/JavaMail/" style="font-size: 13px; color: #7dc3de">JavaMail</a> <a href="/tags/JavaScript/" style="font-size: 16.5px; color: #4dbc6f">JavaScript</a> <a href="/tags/Linux/" style="font-size: 13.88px; color: #71c1c2">Linux</a> <a href="/tags/Log/" style="font-size: 13px; color: #7dc3de">Log</a> <a href="/tags/Markdown/" style="font-size: 13.88px; color: #71c1c2">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 20px; color: #1db400">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 13.88px; color: #71c1c2">MySQL</a> <a href="/tags/PHP/" style="font-size: 16.5px; color: #4dbc6f">PHP</a> <a href="/tags/Rhythmbox/" style="font-size: 13px; color: #7dc3de">Rhythmbox</a> <a href="/tags/SSO/" style="font-size: 13px; color: #7dc3de">SSO</a> <a href="/tags/Servlet/" style="font-size: 13px; color: #7dc3de">Servlet</a> <a href="/tags/Shiro/" style="font-size: 13.88px; color: #71c1c2">Shiro</a> <a href="/tags/Spring/" style="font-size: 13.88px; color: #71c1c2">Spring</a> <a href="/tags/Suse/" style="font-size: 13px; color: #7dc3de">Suse</a> <a href="/tags/Thinking-in-Java/" style="font-size: 19.13px; color: #29b61c">Thinking in Java</a> <a href="/tags/Ubuntu/" style="font-size: 17.38px; color: #41ba53">Ubuntu</a> <a href="/tags/Vim/" style="font-size: 18.25px; color: #35b838">Vim</a> <a href="/tags/VirtualBox/" style="font-size: 13px; color: #7dc3de">VirtualBox</a> <a href="/tags/Vsftpd/" style="font-size: 13px; color: #7dc3de">Vsftpd</a> <a href="/tags/jQuery/" style="font-size: 13px; color: #7dc3de">jQuery</a> <a href="/tags/pam-mysql/" style="font-size: 13px; color: #7dc3de">pam_mysql</a> <a href="/tags/小米/" style="font-size: 13px; color: #7dc3de">小米</a> <a href="/tags/软件/" style="font-size: 15.63px; color: #59bd8b">软件</a>
     </div>
   </div>
 
@@ -342,7 +422,7 @@ Updated:<time datetime="2016-04-24T09:49:14.143Z" itemprop="dateModified">2016-0
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">February 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">June 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/05/">May 2013</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">April 2013</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">March 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -362,6 +442,10 @@ Updated:<time datetime="2016-04-24T09:49:14.143Z" itemprop="dateModified">2016-0
       <ul>
         
           <li>
+            <a href="/2016/05/16/git-internals/">Git 内幕</a>
+          </li>
+        
+          <li>
             <a href="/2016/04/29/hexo-s-calendar-plugin/">Hexo日历插件</a>
           </li>
         
@@ -375,10 +459,6 @@ Updated:<time datetime="2016-04-24T09:49:14.143Z" itemprop="dateModified">2016-0
         
           <li>
             <a href="/2015/08/28/javascript-oop-function-expression-and-async/">JavaScript 面向对象程序设计、函数表达式和异步编程</a>
-          </li>
-        
-          <li>
-            <a href="/2015/08/28/javascript-reference-type/">JavaScript 引用类型</a>
           </li>
         
       </ul>
